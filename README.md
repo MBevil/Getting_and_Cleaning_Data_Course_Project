@@ -32,10 +32,10 @@ Create one R script called run_analysis.R that does the following:
 
 **Assumptions:**
 
-  *Internet connectivity to download source files
+  * Internet connectivity to download source files
 
 **R Package Dependancies:**
   
-  *plyr v1.8.1 or later
+  * plyr v1.8.1 or later
 
 
