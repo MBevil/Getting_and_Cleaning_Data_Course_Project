@@ -100,7 +100,7 @@ Create one R script called run_analysis.R that does the following:
   
     colnames(newData)[-c(1:2)] <- paste(colnames(newData)[-c(1:2)], "_mean", sep="")
     
-  **Step 11:**  Write out the "tidy" dataset to the "tidy_data.txt" file:
+  **Step 11:**  Write out the "tidy" dataset to the "tidy_data.txt" file (tab delimited):
   
     print("Saving new dataset...")
     write.table(newData,"tidy_data.txt", sep ="\t", row.names = FALSE)
