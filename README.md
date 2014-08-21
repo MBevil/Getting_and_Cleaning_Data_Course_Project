@@ -28,4 +28,4 @@ Create one R script called run_analysis.R that does the following:
 8. Subset the merged data to extract columns with mean or standard deviation data.
 9. Calculate the mean of the replicates for each variable by subject and activity.
 10. Update the column names to reflect the transformation (mean).
-11. Write out the "tidy" dataset to the "tidyData.txt" file.
+11. Write out the "tidy" dataset to the "tidy_data.txt" file.
