@@ -16,7 +16,7 @@ Create one R script called run_analysis.R that does the following:
   5. Creates a second, independent tidy dataset with the average of each variable for each activity and each subject.
 
 
-** Basic Code Walkthrough for run_analysis.R
+**Basic Code Walkthrough for run_analysis.R**
 
 1. Install and load plyr package
 2. Download source data files (activity labels, features, test, training) if not present
