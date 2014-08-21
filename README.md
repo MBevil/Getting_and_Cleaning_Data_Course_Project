@@ -77,8 +77,19 @@ Create one R script called run_analysis.R that does the following:
     data <- rbind(trainingData, testData)  ## 10299 observations of 563 variables
     
     
-  7. Update the activities to utilize the names.
-  8. Subset the merged data to extract columns with mean or standard deviation data.
+  **Step 7:** Update the activities to utilize the names:
+  
+    activity_labels <- read.table(unz(destFile, paste(data_path,"activity_labels.txt",sep="/")))
+    
+    data$activity <- factor(data$activity, levels=activity_labels$V1, labels=activity_labels$V2)
+    
+    
+  **Step 8:**  Subset the merged data to extract columns with mean or standard deviation data:
+  
+    print("Subsetting Mean and Std Dev columns...")
+    subsetData <- data[,c(1,2,grep("std", colnames(data)), grep("mean", colnames(data)))]
+    
+    
   9. Calculate the mean of the replicates for each variable by subject and activity.
   10. Update the column names to reflect the transformation (mean).
   11. Write out the "tidy" dataset to the "tidy_data.txt" file.
