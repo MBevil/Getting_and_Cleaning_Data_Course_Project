@@ -5,7 +5,7 @@ fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%2
 destFile <- "./sourceData.zip"
 data_path <- "UCI HAR Dataset"
 
-##Install required packacets  
+##Install required packages  
 if(!is.element("plyr", installed.packages()[,1])){
   print("Installing packages")
   install.packages("plyr")
@@ -43,7 +43,7 @@ data2 <- read.table(unz(destFile, paste(data_path,"test/X_test.txt",sep="/")), s
 testData <- cbind(subjects2, activities2, data2)
 
 ## Merge the train and test data sets
-print("Merging the train and test data sets...")
+print("Merging the training and test data sets...")
 data <- rbind(trainingData, testData)  ## 10299 observations of 563 variables
 
 ## arrange the data by id
@@ -69,7 +69,7 @@ colnames(newData)[-c(1:2)] <- paste(colnames(newData)[-c(1:2)], "_mean", sep="")
 
 # Save tidy dataset
 print("Saving new dataset...")
-write.table(newData,"resultData.txt", sep ="\t", row.names = FALSE)
+write.table(newData,"tidy_data.txt", sep ="\t", row.names = FALSE)
 
 print("End run_analysis...")
 
