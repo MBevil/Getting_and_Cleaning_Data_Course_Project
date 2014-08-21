@@ -26,7 +26,7 @@ Create one R script called run_analysis.R that does the following:
 
 **Basic Code Walkthrough for run_analysis.R**
 
-  Step 1: Install and load plyr package:
+  **Step 1:**: Install and load plyr package:
   
     if(!is.element("plyr", installed.packages()[,1])){
       print("Installing packages")
@@ -34,7 +34,7 @@ Create one R script called run_analysis.R that does the following:
     }
   
 
-  Step 2. Download source data files (activity labels, features, test, training) if not present:
+  **Step 2:** Download source data files (activity labels, features, test, training) if not present:
   
     if (!file.exists(destFile)){
     
