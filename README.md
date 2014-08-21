@@ -61,8 +61,22 @@ Create one R script called run_analysis.R that does the following:
     trainingData <- cbind(subjects1, activities1, data1)
     
     
-  5. Read in the test data set adding the subject and activity columns.
-  6. Merge the test and training data into a single dataset.
+  **Step 5:** Read in the test data set adding the subject and activity columns:
+  
+    print("Reading test data set...")
+    subjects2 <- read.table(unz(destFile, paste(data_path,"test/subject_test.txt",sep="/")), sep="", col.names="subject")
+    activities2 <- read.table(unz(destFile, paste(data_path,"test/y_test.txt",sep="/")), sep="", col.names="activity")
+    data2 <- read.table(unz(destFile, paste(data_path,"test/X_test.txt",sep="/")), sep="", , col.names=cols$V2)
+
+    testData <- cbind(subjects2, activities2, data2)
+    
+    
+  **Step 6:** Merge the test and training data into a single dataset:
+  
+    print("Merging the train and test data sets...")
+    data <- rbind(trainingData, testData)  ## 10299 observations of 563 variables
+    
+    
   7. Update the activities to utilize the names.
   8. Subset the merged data to extract columns with mean or standard deviation data.
   9. Calculate the mean of the replicates for each variable by subject and activity.
