@@ -88,11 +88,11 @@ A tab-delimited text file containing a tidy data set consisting of the following
 
 **Data Cleanup Activities Undertaken to Produce tidy_data.txt:**
 
-Dowload and read the training and test source data files
-Bind the subject and activity columns to the training and test datasets
-Merge the test and training data into a single dataset
-Update the activities in the dataset to use the labels provided (activity_labels.txt)
-Subset the merged data to extract columns with mean or standard deviation data
-Calculate the mean of the replicates for each variable by subject and activity
-Relabel the now averaged reading columns by postpending their names with "_mean"
-Write out the "tidy" dataset as a tab delimited file to "tidy_data.txt"
+1. Dowload and read the training and test source data files
+2. Bind the subject and activity columns to the training and test datasets
+3. Merge the test and training data into a single dataset
+4. Update the activities in the dataset to use the labels provided (activity_labels.txt)
+5. Subset the merged data to extract columns with mean or standard deviation data
+6. Calculate the mean of the replicates for each variable by subject and activity
+7. Relabel the now averaged reading columns by postpending their names with "_mean"
+8. Write out the "tidy" dataset as a tab delimited file to "tidy_data.txt"
