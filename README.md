@@ -26,7 +26,7 @@ Create one R script called run_analysis.R that does the following:
 
 **Basic Code Walkthrough for run_analysis.R**
 
-  **Step 1:**: Install and load plyr package:
+  **Step 1:** Install and load plyr package:
   
     if(!is.element("plyr", installed.packages()[,1])){
       print("Installing packages")
@@ -45,8 +45,22 @@ Create one R script called run_analysis.R that does the following:
       dateDownloaded <- date()
     }
     
-  3. Create a vector of the feature names.
-  4. Read in the training data set adding the subject and activity columns.
+  **Step 3:** Create a vector of the feature names:
+  
+    print("Reading feature names...")
+    cols <- read.table(unz(destFile, paste(data_path,"features.txt",sep="/")))
+    
+    
+  **Step 4:** Read in the training data set adding the subject and activity columns:
+  
+    print("Reading training data set...")
+    subjects1 <- read.table(unz(destFile, paste(data_path,"train/subject_train.txt",sep="/")), sep="", col.names="subject") 
+    activities1 <- read.table(unz(destFile, paste(data_path,"train/y_train.txt",sep="/")), sep="", col.names="activity")
+    data1 <-    read.table(unz(destFile, paste(data_path,"train/X_train.txt",sep="/")), sep="", col.names=cols$V2) 
+
+    trainingData <- cbind(subjects1, activities1, data1)
+    
+    
   5. Read in the test data set adding the subject and activity columns.
   6. Merge the test and training data into a single dataset.
   7. Update the activities to utilize the names.
