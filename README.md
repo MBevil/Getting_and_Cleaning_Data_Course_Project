@@ -15,10 +15,25 @@ Create one R script called run_analysis.R that does the following:
   4.  Appropriately labels the dataset with descriptive variable names. 
   5. Creates a second, independent tidy dataset with the average of each variable for each activity and each subject.
 
+**Assumptions:**
+
+  * Internet connectivity to download source files
+
+**R Package Dependancies:**
+  
+  * plyr v1.8.1 or later
+
 
 **Basic Code Walkthrough for run_analysis.R**
 
-  1. Install and load plyr package.
+  Step 1: Install and load plyr package:
+  
+    if(!is.element("plyr", installed.packages()[,1])){
+    print("Installing packages")
+    install.packages("plyr")
+    }
+  
+
   2. Download source data files (activity labels, features, test, training) if not present.
   3. Create a vector of the feature names.
   4. Read in the training data set adding the subject and activity columns.
@@ -30,12 +45,6 @@ Create one R script called run_analysis.R that does the following:
   10. Update the column names to reflect the transformation (mean).
   11. Write out the "tidy" dataset to the "tidy_data.txt" file.
 
-**Assumptions:**
 
-  * Internet connectivity to download source files
-
-**R Package Dependancies:**
-  
-  * plyr v1.8.1 or later
 
 
