@@ -90,9 +90,20 @@ Create one R script called run_analysis.R that does the following:
     subsetData <- data[,c(1,2,grep("std", colnames(data)), grep("mean", colnames(data)))]
     
     
-  9. Calculate the mean of the replicates for each variable by subject and activity.
-  10. Update the column names to reflect the transformation (mean).
-  11. Write out the "tidy" dataset to the "tidy_data.txt" file.
+  **Step 9:** Calculate the mean of the replicates for each variable by subject and activity:
+  
+    print("Getting mean of replicates...")
+    newData <- ddply(subsetData, .(subject, activity), .fun=function(x){ colMeans(x[,-c(1:2)]) })
+    
+    
+  **Step 10:** Update the column names to reflect the transformation (mean):
+  
+    colnames(newData)[-c(1:2)] <- paste(colnames(newData)[-c(1:2)], "_mean", sep="")
+    
+  **Step 11:**  Write out the "tidy" dataset to the "tidy_data.txt" file:
+  
+    print("Saving new dataset...")
+    write.table(newData,"tidy_data.txt", sep ="\t", row.names = FALSE)
 
 
 
