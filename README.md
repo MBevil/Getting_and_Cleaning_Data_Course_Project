@@ -17,7 +17,6 @@ Create one R script called run_analysis.R that does the following:
 
 
 **Basic Code Walkthrough for run_analysis.R**
-
 1. Install and load plyr package.
 2. Download source data files (activity labels, features, test, training) if not present.
 3. Create a vector of the feature names.
@@ -29,3 +28,6 @@ Create one R script called run_analysis.R that does the following:
 9. Calculate the mean of the replicates for each variable by subject and activity.
 10. Update the column names to reflect the transformation (mean).
 11. Write out the "tidy" dataset to the "tidy_data.txt" file.
+
+**Assumptions:**
+
