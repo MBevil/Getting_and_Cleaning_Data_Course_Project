@@ -29,12 +29,22 @@ Create one R script called run_analysis.R that does the following:
   Step 1: Install and load plyr package:
   
     if(!is.element("plyr", installed.packages()[,1])){
-    print("Installing packages")
-    install.packages("plyr")
+      print("Installing packages")
+      install.packages("plyr")
     }
   
 
-  2. Download source data files (activity labels, features, test, training) if not present.
+  Step 2. Download source data files (activity labels, features, test, training) if not present:
+  
+    if (!file.exists(destFile)){
+    
+      print(paste("Downloading data file from: ", fileUrl))
+      download.file(fileUrl, destFile, method="curl", quiet=TRUE, mode="wb")
+      
+      print(paste("Downloading data file complete to: ", destFile))
+      dateDownloaded <- date()
+    }
+    
   3. Create a vector of the feature names.
   4. Read in the training data set adding the subject and activity columns.
   5. Read in the test data set adding the subject and activity columns.
